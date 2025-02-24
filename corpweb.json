@@ -28,7 +28,7 @@
 			"Properties": {
 				"EnableDnsSupport": "true",
 				"EnableDnsHostnames": "true",
-				"CidrBlock": "10.0.0.0/16",
+				"CidrBlock": "10.0.0.0/18",
 				"Tags": [
 					{
 						"Key": "Environment",
@@ -289,6 +289,8 @@
 			"Type": "AWS::ElasticLoadBalancingV2::TargetGroup",
 			"Properties": {
 				"HealthCheckEnabled": true,
+				"HealthCheckIntervalSeconds": 180,
+				"HealthCheckTimeoutSeconds": 120,
 				"HealthCheckPath": "/",
 				"HealthCheckPort": "80",
 				"HealthCheckProtocol": "HTTP",
